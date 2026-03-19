@@ -51,13 +51,17 @@ ai-gateway pi
 ai-gateway pi --cred <id> --group <group-id> [args...]
 ```
 
+`ai-gateway pi` injects `ANTHROPIC_*`, `AZURE_OPENAI_*`, and `GEMINI_*` gateway env vars.
+
 Arbitrary program:
 
 ```bash
 ai-gateway run <program> [args...]
-ai-gateway run <program> [args...] --expose <all|claude|openai|azure-openai>[,...]
+ai-gateway run <program> [args...] --expose <all|claude|openai|azure-openai|gemini>[,...]
 ai-gateway run <program> [args...] --cred <id> --group <group-id>
 ```
+
+`ai-gateway run` injects `ANTHROPIC_*`, `OPENAI_*`, `AZURE_OPENAI_*`, and `GEMINI_*` env vars by default.
 
 List models grouped by provider:
 
