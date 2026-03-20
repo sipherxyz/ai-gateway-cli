@@ -51,7 +51,7 @@ ai-gateway pi
 ai-gateway pi --cred <id> --group <group-id> [args...]
 ```
 
-`ai-gateway pi` injects `ANTHROPIC_*`, `AZURE_OPENAI_*`, and `GEMINI_*` gateway env vars.
+`ai-gateway pi` injects `ANTHROPIC_*`, `AZURE_OPENAI_*`, and `GEMINI_*` gateway env vars, and strips inherited `OPENAI_*` vars so Pi does not see OpenAI-compatible settings.
 
 Arbitrary program:
 
