@@ -44,6 +44,16 @@ ai-gateway codex
 ai-gateway codex --cred <id> --group <group-id>
 ```
 
+Droid:
+
+```bash
+ai-gateway droid
+ai-gateway droid --cred <id> --group <group-id> [args...]
+ai-gateway droid exec --model gpt-5.4 "fix the failing test"
+```
+
+`ai-gateway droid` writes a managed Droid overlay to `~/.factory/settings.ai-gateway.json`, points `droid --settings` at that file, syncs only AI Gateway OpenAI/Codex and Anthropic/Claude models into `customModels`, and injects `AI_GATEWAY_API_KEY` at launch time.
+
 Pi:
 
 ```bash
