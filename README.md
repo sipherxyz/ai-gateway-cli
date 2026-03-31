@@ -1,6 +1,6 @@
 # AI Gateway CLI
 
-`ai-gateway` is a cross-platform launcher for Claude Code, Codex, Pi, and arbitrary programs that automatically configures the correct gateway environment variables.
+`ai-gateway` is a cross-platform launcher for Claude Code, Codex, Pi, and arbitrary programs that automatically configures the right AI Gateway runtime for each tool.
 
 ## Install / Update
 
@@ -52,7 +52,7 @@ ai-gateway droid --cred <id> --group <group-id> [args...]
 ai-gateway droid exec --model gpt-5.4 "fix the failing test"
 ```
 
-`ai-gateway droid` writes a managed Droid overlay to `~/.factory/settings.ai-gateway.json`, points `droid --settings` at that file, syncs only AI Gateway OpenAI/Codex and Anthropic/Claude models into `customModels`, and injects `AI_GATEWAY_API_KEY` at launch time.
+`ai-gateway droid` writes a managed Droid overlay to `~/.factory/settings.ai-gateway.json`, points `droid --settings` at that file, syncs AI Gateway OpenAI, Anthropic, and OpenAI-compat models into `customModels`, maps OpenAI-compat entries to Droid's `generic-chat-completion-api`, and injects `_AI_GATEWAY_API_KEY` at launch time.
 
 Pi:
 
@@ -61,7 +61,7 @@ ai-gateway pi
 ai-gateway pi --cred <id> --group <group-id> [args...]
 ```
 
-`ai-gateway pi` injects `ANTHROPIC_*`, `AZURE_OPENAI_*`, and `GEMINI_*` gateway env vars, and strips inherited `OPENAI_*` vars so Pi does not see OpenAI-compatible settings.
+`ai-gateway pi` writes a managed Pi extension to `~/.pi/ai-gateway/extension.ts`, loads it via `pi -e`, registers `ai-gateway-openai`, `ai-gateway-openai-compat`, and `ai-gateway-anthropic` from the live AI Gateway `/v1/models` list, and injects only `_AI_GATEWAY_API_KEY` at launch time.
 
 Arbitrary program:
 
