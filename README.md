@@ -1,6 +1,6 @@
 # AI Gateway CLI
 
-`ai-gateway` is a cross-platform launcher for Claude Code, Codex, Pi, and arbitrary programs that automatically configures the right AI Gateway runtime for each tool.
+`ai-gateway` is a cross-platform launcher for Claude Code, Codex, Pi, Grok Build, and arbitrary programs that automatically configures the right AI Gateway runtime for each tool.
 
 ## Install / Update
 
@@ -29,6 +29,7 @@ ai-gateway claude
 ai-gateway codex
 ai-gateway droid
 ai-gateway pi
+ai-gateway grok
 ```
 
 You can pass through any args after the command, for example:
